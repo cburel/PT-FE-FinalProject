@@ -1,0 +1,17 @@
+.create-btn {
+    color: white;
+    background-color: green;
+    margin-left: 0.5rem;
+}
+
+.update-btn {
+    color: white;
+    background-color: blue;
+    margin-left: 0.5rem;
+}
+
+.delete-btn {
+    color: white;
+    background-color: red;
+    margin-left: 0.5rem;
+}
