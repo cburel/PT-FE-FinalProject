@@ -16,9 +16,6 @@ export default function App() {
   // handles adding a new item to the list
   const addItem = (newItemName) => {
 
-    // debug
-    console.log("Created!");
-
     // creates new item with id (hacky) and name
     const newItem = { id: items.length + 1, name: newItemName };
     setItems(prevItems => [...prevItems, newItem]);
@@ -26,9 +23,6 @@ export default function App() {
 
   // handles deleting and item from the list
   const deleteItem = (idToDelete) => {
-
-    // debug
-    console.log("Deleted!")
 
     // creates new array of items with everything except the item to delete
     setItems(prevItems => prevItems.filter(item => item.id !== idToDelete));
@@ -41,7 +35,7 @@ export default function App() {
     <>
       <div className='upper'>
         <h1>Item Tracker</h1>
-        <Form setDescription={setDescription} onAddItem={addItem} onDeleteItem={deleteItem} />
+        <Form setDescription={setDescription} onAddItem={addItem} />
         <List description={description} items={items} onDeleteItem={deleteItem} />
       </div>
     </>
