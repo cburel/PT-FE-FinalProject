@@ -47,7 +47,7 @@ export default function Form({ setDescription, onAddItem }) {
                 placeholder="Update description"
                 onChange={(event) => setDescriptionValue(event.target.value)}
             />
-            <button className="update-btn" onClick={handleSubmit}>Update</button>
+            <button className="update-btn update-desc" onClick={handleSubmit}>Update</button>
         </form>
     )
 }

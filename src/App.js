@@ -8,9 +8,9 @@ export default function App() {
 
   // example items
   const [items, setItems] = useState([
-    { id: 1, name: 'item1' },
-    { id: 2, name: 'item2' },
-    { id: 3, name: 'item3' }
+    { id: 1, name: 'Bananas' },
+    { id: 2, name: 'Oranges' },
+    { id: 3, name: 'Lettuce' }
   ]);
 
   // handles adding a new item to the list
@@ -18,25 +18,36 @@ export default function App() {
 
     // creates new item with id (hacky) and name
     const newItem = { id: items.length + 1, name: newItemName };
-    setItems(prevItems => [...prevItems, newItem]);
+    setItems(prevItems =>
+      [...prevItems, newItem]);
   }
 
   // handles deleting and item from the list
   const deleteItem = (idToDelete) => {
 
     // creates new array of items with everything except the item to delete
-    setItems(prevItems => prevItems.filter(item => item.id !== idToDelete));
+    setItems(prevItems =>
+      prevItems.filter(item => item.id !== idToDelete));
   }
 
   // default description text
-  const [description, setDescription] = useState("Hello, World!");
+  const [description, setDescription] = useState("Hello, World! Maybe this is a grocery list?");
+
+  // handles updating an existing item in the list
+  const updateItem = (idToUpdate, newName) => {
+    setItems(prevItems =>
+      prevItems.map(item =>
+        item.id === idToUpdate ? { ...item, name: newName } : item
+      )
+    );
+  };
 
   return (
     <>
       <div className='upper'>
-        <h1>Item Tracker</h1>
+        <h1>To-Do List</h1>
         <Form setDescription={setDescription} onAddItem={addItem} />
-        <List description={description} items={items} onDeleteItem={deleteItem} />
+        <List description={description} items={items} onDeleteItem={deleteItem} onUpdateIem={updateItem} />
       </div>
     </>
   );

@@ -4,9 +4,21 @@
     margin-left: 0.5rem;
 }
 
+.create-btn:hover {
+    color: black;
+    background-color: lightgoldenrodyellow;
+    margin-left: 0.5rem;
+}
+
 .update-btn {
     color: white;
     background-color: blue;
+    margin-left: 0.5rem;
+}
+
+.update-btn:hover {
+    color: black;
+    background-color: azure;
     margin-left: 0.5rem;
 }
 
@@ -14,4 +26,23 @@
     color: white;
     background-color: red;
     margin-left: 0.5rem;
+}
+
+.delete-btn:hover {
+    color: black;
+    background-color: lightpink;
+    margin-left: 0.5rem;
+}
+
+.update-btn,
+.update-btn:hover,
+.delete-btn,
+.delete-btn:hover,
+.update-input {
+    float: right;
+}
+
+.update-desc,
+.update-desc:hover {
+    float: initial;
 }
