@@ -47,8 +47,9 @@ export default function App() {
     <>
       <div className='upper'>
         <h1>To-Do List</h1>
+        <p>{description}</p>
         <Form setDescription={setDescription} onAddItem={addItem} />
-        <List description={description} items={items} onDeleteItem={deleteItem} onUpdateItem={updateItem} />
+        <List setDescription={description} items={items} onDeleteItem={deleteItem} onUpdateItem={updateItem} />
       </div>
     </>
   );
