@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Form from './Components/Form';
 import List from './Components/List';
+import ListItem from './Components/ListItem';
 
 // App (top-level parent) component
 export default function App() {
@@ -42,12 +43,13 @@ export default function App() {
     );
   };
 
+
   return (
     <>
       <div className='upper'>
         <h1>To-Do List</h1>
         <Form setDescription={setDescription} onAddItem={addItem} />
-        <List description={description} items={items} onDeleteItem={deleteItem} onUpdateIem={updateItem} />
+        <List description={description} items={items} onDeleteItem={deleteItem} onUpdateItem={updateItem} />
       </div>
     </>
   );
